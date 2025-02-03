@@ -52,7 +52,7 @@ func main() {
 		panic(err)
 	}
 	defer ch.Close()
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 10000; i++ {
 		order := GenerateOrder()
 		err := Notify(ch, order)
 		if err != nil {

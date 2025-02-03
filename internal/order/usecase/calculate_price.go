@@ -34,6 +34,7 @@ func (c *CalculateFinalPriceUseCase) Execute(input OrderInputDTO) (*OrderOutputD
 	}
 	err = c.OrderRepository.Save(order)
 	if err != nil {
+		println("Erro ao salvar order", order)
 		return nil, err
 	}
 	return &OrderOutputDTO{
